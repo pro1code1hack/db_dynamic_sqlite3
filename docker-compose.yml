@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15  # Replace with the PostgreSQL version you need
+    container_name: postgres_container
+    restart: always
+    environment:
+      POSTGRES_USER: yehor  # Replace with your username
+      POSTGRES_PASSWORD: q1w2e3  # Replace with your password
+      POSTGRES_DB: py5  # Replace with your database name
+    ports:
+      - "5432:5432" 
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  # Persist data on host
+
+volumes:
+  postgres_data:
